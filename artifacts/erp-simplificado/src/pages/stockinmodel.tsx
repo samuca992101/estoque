@@ -24,14 +24,19 @@ export function StockInModal({ product, isOpen, onClose, onSuccess }: StockInMod
   const [loading, setLoading] = useState(false);
   const { toast } = useToast();
 
-  const handleConfirm = async () => {
+ const handleConfirm = async () => {
     if (!product || quantity <= 0) return;
 
     setLoading(true);
     try {
-      const response = await fetch("/api/inventory/in", {
+      // 👈 ALTERADO: Apontando explicitamente para a porta 3000 do Backend
+      const response = await fetch("http://localhost:3000/api/inventory/in", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { 
+          "Content-Type": "application/json",
+          // Se o seu sistema guardar o token de autenticação (JWT) no localStorage, adicione a linha abaixo:
+          // "Authorization": `Bearer ${localStorage.getItem("token")}` 
+        },
         body: JSON.stringify({ productId: product.id, quantity }),
       });
 

@@ -8,7 +8,7 @@ import { users as usersTable } from "../db/schema";
 
 const router: IRouter = Router();
 
-// Validações locais com Zod
+
 const RegisterSchema = z.object({
   name: z.string().min(1),
   email: z.string().email(),

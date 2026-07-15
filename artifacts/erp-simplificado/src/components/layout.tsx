@@ -34,7 +34,7 @@ export function Layout({ children }: { children: ReactNode }) {
       <div className="flex h-14 items-center border-b px-6">
         <div className="flex items-center gap-2 font-bold text-lg text-primary">
           <TrendingUp className="h-6 w-6" />
-          <span>ERP Inteligente</span>
+          <span>Estoque Inteligente</span>
         </div>
       </div>
       <div className="flex-1 overflow-auto py-4">
