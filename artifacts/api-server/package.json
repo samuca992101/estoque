@@ -26,6 +26,7 @@
     "zod": "catalog:"
   },
   "devDependencies": {
+    "@faker-js/faker": "^10.5.0",
     "@types/bcryptjs": "^2.4.6",
     "@types/better-sqlite3": "^7.6.13",
     "@types/cookie-parser": "^1.4.7",
@@ -39,6 +40,7 @@
     "esbuild-plugin-pino": "^2.0.2",
     "pino-pretty": "^11.0.0",
     "thread-stream": "^3.0.0",
+    "tsx": "catalog:",
     "typescript": "^5.4.5"
   }
 }
