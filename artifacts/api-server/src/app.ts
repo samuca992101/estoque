@@ -3,6 +3,8 @@ import cors from "cors";
 import pinoHttp from "pino-http";
 import router from "./routes";
 import { logger } from "./lib/logger";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
 // 🛠️ IMPORTAÇÕES DO BANCO DE DADOS ADICIONADAS
 import { db } from "./db";
@@ -10,6 +12,14 @@ import { products as productsTable, inventoryMovements as salesTable } from "./d
 import { eq } from "drizzle-orm";
 
 const app: Express = express();
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+const frontendPath = path.resolve(
+  __dirname,
+  "../../erp-simplificado/dist/public"
+);
 
 app.use(
   pinoHttp({
