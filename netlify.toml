@@ -4,6 +4,7 @@
   publish = "dist/public"
 
 [[redirects]]
-  from = "/*"
-  to = "/index.html"
+  from = "/api/*"
+  to = "https://estoque-wvfr.onrender.com/api/:splat"
   status = 200
+  force = true
